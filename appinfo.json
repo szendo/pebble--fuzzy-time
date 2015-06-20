@@ -1,0 +1,39 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "sendow",
+    "longName": "Fuzzy Time'",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/menu_icon.png",
+                "menuIcon": true,
+                "name": "MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/roboto-bold.png",
+                "name": "IMAGE_ROBOTO_BOLD",
+                "type": "png"
+            },
+            {
+                "file": "images/roboto-light.png",
+                "name": "IMAGE_ROBOTO_LIGHT",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Fuzzy Time'",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "9ccadcec-d585-45b2-b0f7-db34ea74528c",
+    "versionLabel": "1.1",
+    "watchapp": {
+        "watchface": true
+    }
+}
