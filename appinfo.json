@@ -1,7 +1,9 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_TEXT_ALIGN": 0
+    },
     "capabilities": [
-        ""
+        "configurable"
     ],
     "companyName": "sendow",
     "longName": "Fuzzy Time'",
@@ -32,7 +34,7 @@
         "basalt"
     ],
     "uuid": "9ccadcec-d585-45b2-b0f7-db34ea74528c",
-    "versionLabel": "1.1",
+    "versionLabel": "1.2",
     "watchapp": {
         "watchface": true
     }

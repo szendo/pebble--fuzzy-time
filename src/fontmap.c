@@ -123,20 +123,41 @@ void deinit_fonts() {
   deinit_font(&s_roboto_light_params);
 }
 
-void draw_text(GContext *ctx, char* text, FontType font_type) {
+void draw_text(GContext *ctx, char* text, FontType font_type, GPoint draw_offset) {
   FontData *font_data = ((font_type == BOLD_TYPE) ? (&s_roboto_bold_params) : (&s_roboto_light_params));
-  int16_t offset = 0;
+  int16_t offset = draw_offset.x;
   for (char *t = text; *t != '\0'; t++) {
     if (*t >= 'a' && *t <= 'z') {
       LetterData *letter = &(font_data->letters[*t - 'a']);
-      graphics_draw_bitmap_in_rect(ctx, letter->bitmap, GRect(offset - letter->kern_begin, 0, letter->width, font_data->height));
+      graphics_draw_bitmap_in_rect(ctx, letter->bitmap, GRect(offset - letter->kern_begin, draw_offset.y, letter->width, font_data->height));
       offset += letter->width - letter->kern_end;
     } else if (*t == '\'') {
       LetterData *letter = &(font_data->letters[26]);
-      graphics_draw_bitmap_in_rect(ctx, letter->bitmap, GRect(offset - letter->kern_begin, 0, letter->width, font_data->height));
+      graphics_draw_bitmap_in_rect(ctx, letter->bitmap, GRect(offset - letter->kern_begin, draw_offset.y, letter->width, font_data->height));
       offset += letter->width - letter->kern_end;
     } else {
       offset += font_data->space_width;
     }
   }
+}
+
+int16_t measure_text(char* text, FontType font_type) {
+  FontData *font_data = ((font_type == BOLD_TYPE) ? (&s_roboto_bold_params) : (&s_roboto_light_params));
+  int16_t offset = 0;
+  int16_t last_kern_end = 0;
+  for (char *t = text; *t != '\0'; t++) {
+    if (*t >= 'a' && *t <= 'z') {
+      LetterData *letter = &(font_data->letters[*t - 'a']);
+      offset += letter->width - letter->kern_end;
+      last_kern_end = letter->kern_end;
+    } else if (*t == '\'') {
+      LetterData *letter = &(font_data->letters[26]);
+      offset += letter->width - letter->kern_end;
+      last_kern_end = letter->kern_end;
+    } else {
+      offset += font_data->space_width;
+      last_kern_end = 0;
+    }
+  }
+  return offset + last_kern_end;
 }
