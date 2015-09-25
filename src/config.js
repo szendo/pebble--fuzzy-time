@@ -1,5 +1,5 @@
 Pebble.addEventListener('showConfiguration', function(e) {
-  Pebble.openURL('http://sendow.bitbucket.org/pebble/fuzzy-time/config.html');
+  Pebble.openURL('http://sendow.github.io/pebble/fuzzy-time/config.html');
 });
 
 Pebble.addEventListener('webviewclosed', function(e) {

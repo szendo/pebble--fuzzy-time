@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3] - 2015-09-25
+
+Moved configuration page from Bitbucket to GitHub.
+
 ## [1.2] - 2015-09-24
 
 Added configuration support: the watchface can now be center aligned in preparation for the Pebble Time Round.
