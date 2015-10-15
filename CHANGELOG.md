@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4] - 2015-10-15
+
+Added support for "Chalk" platform.
+
 ## [1.3] - 2015-09-25
 
 Moved configuration page from Bitbucket to GitHub.

@@ -2,8 +2,6 @@
 #include "num2words.h"
 #include "fontmap.h"
 #include "config.h"
-  
-#define PBL_IF_RECT_ELSE(x, y) x
 
 typedef enum {
   MOVING_IN,
