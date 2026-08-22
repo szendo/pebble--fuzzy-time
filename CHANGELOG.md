@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.6.1] - 2026-08-22
+
+Fixed typo on configuration page
+
 ## [1.6.0] - 2026-08-22
 
 Fixed configuration page (now using Clay)

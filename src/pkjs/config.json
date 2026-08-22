@@ -9,7 +9,7 @@
       {
         "type": "select",
         "messageKey": "TEXT_ALIGN",
-        "label": "Text aligment",
+        "label": "Text alignment",
         "defaultValue": "0",
         "options": [
           {"value": "0", "label": "Default"},
