@@ -1,6 +1,8 @@
 {
-    "author": "sendow",
-    "dependencies": {},
+    "author": "szendo",
+    "dependencies": {
+        "@rebble/clay": "^1.0.10"
+    },
     "keywords": [],
     "name": "fuzzy-time",
     "pebble": {
@@ -8,10 +10,10 @@
             "configurable"
         ],
         "displayName": "Fuzzy Time'",
-        "enableMultiJS": false,
-        "messageKeys": {
-            "KEY_TEXT_ALIGN": 0
-        },
+        "enableMultiJS": true,
+        "messageKeys": [
+            "TEXT_ALIGN"
+        ],
         "projectType": "native",
         "resources": {
             "media": [
@@ -43,5 +45,5 @@
             "watchface": true
         }
     },
-    "version": "1.4.0"
+    "version": "1.6.0"
 }

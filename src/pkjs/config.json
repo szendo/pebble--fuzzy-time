@@ -1,0 +1,26 @@
+[
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "heading",
+        "defaultValue": "Customization"
+      },
+      {
+        "type": "select",
+        "messageKey": "TEXT_ALIGN",
+        "label": "Text aligment",
+        "defaultValue": "0",
+        "options": [
+          {"value": "0", "label": "Default"},
+          {"value": "1", "label": "Left"},
+          {"value": "2", "label": "Center"}
+        ]
+      }
+    ]
+  },
+  {
+    "type": "submit",
+    "defaultValue": "Save"
+  }
+]

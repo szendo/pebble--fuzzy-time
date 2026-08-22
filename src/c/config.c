@@ -1,17 +1,15 @@
 #include <pebble.h>
 #include "config.h"
-  
-#define KEY_TEXT_ALIGN 0
+
+#define STORAGE_KEY_TEXT_ALIGN 0
 
 static ConfigChanged change_callback = NULL;
 
 static void app_message_inbox_received(DictionaryIterator *iterator, void *context) {
   Tuple *next_tuple = dict_read_first(iterator);
   while (NULL != next_tuple) {
-    switch (next_tuple->key) {
-      case KEY_TEXT_ALIGN:
-        persist_write_int(KEY_TEXT_ALIGN, next_tuple->value->uint16);
-        break;
+    if (next_tuple->key == MESSAGE_KEY_TEXT_ALIGN) {
+      persist_write_int(STORAGE_KEY_TEXT_ALIGN, atoi(next_tuple->value->cstring));
     }
     next_tuple = dict_read_next(iterator);
   }
@@ -35,5 +33,5 @@ ConfigChanged config_register_changed(ConfigChanged callback) {
 
 uint8_t config_get_text_align() {
   // persist_read_int() returns 0 when not set
-  return persist_read_int(KEY_TEXT_ALIGN);
+  return persist_read_int(STORAGE_KEY_TEXT_ALIGN);
 }
